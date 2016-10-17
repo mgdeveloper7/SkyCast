@@ -204,10 +204,13 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
                     
                     // Refresh the screen and table view
                     DispatchQueue.main.async {
-                        //DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
+
                         self.populateTodayWeatherDetails()
                         self.hourlyWeatherTableView.reloadData()
                         self.view.hideToastActivity()
+                        
+                        // Scroll to the top of the icon list
+                        self.hourlyWeatherTableView.contentOffset = CGPoint(x: 0, y: 0 - self.hourlyWeatherTableView.contentInset.top)
                     }
                     
                     break;

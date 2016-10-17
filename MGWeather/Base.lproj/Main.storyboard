@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cf7-eg-bSk">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cf7-eg-bSk">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -786,14 +786,6 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nig-Ut-iKd">
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="mgdeveloper7@gmail.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-4p-68k">
-                                        <frame key="frameInset" minX="8" minY="36" width="290" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                    </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supports/Feedback?  Email me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqA-Eg-AZ5">
                                         <frame key="frameInset" minX="8" minY="7" width="258" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -801,6 +793,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-WI-4If">
+                                        <frame key="frameInset" minX="8" minY="36" width="288" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.88122106479999995" green="0.88096064809999997" blue="0.88726851849999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="mg7developer@gmail.com"/>
+                                        <connections>
+                                            <action selector="emailButtonPressed:" destination="Gmv-KE-X3J" eventType="touchUpInside" id="A8V-0l-nO7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -892,7 +893,7 @@
                         <outlet property="aboutTitle" destination="8fK-29-j6z" id="Jo8-vn-Nez"/>
                         <outlet property="aboutVersion" destination="59Z-N8-bCZ" id="65V-24-tjo"/>
                         <outlet property="creditsView" destination="mVP-3T-kFA" id="SJf-yy-eTN"/>
-                        <outlet property="emailLink" destination="4cJ-4p-68k" id="fTb-uN-sfV"/>
+                        <outlet property="emailButton" destination="WoF-WI-4If" id="JRw-Eb-rvN"/>
                         <outlet property="emailView" destination="nig-Ut-iKd" id="fhE-dw-Y3R"/>
                         <outlet property="iconSource" destination="Z03-Su-J6w" id="Beg-Q2-aVP"/>
                         <outlet property="photoSource" destination="GLk-iS-dmV" id="98d-S5-oBQ"/>

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var aboutTitle: UILabel!
@@ -17,7 +18,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var aboutDescription: UILabel!
 
     @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var emailLink: UITextView!
+    @IBOutlet weak var emailButton: UIButton!
     
     @IBOutlet weak var creditsView: UIView!
     @IBOutlet weak var weatherSource: UITextView!
@@ -42,11 +43,6 @@ class AboutViewController: UIViewController {
     
         emailView.backgroundColor = GlobalConstants.ViewShading.Lighter
         creditsView.backgroundColor = GlobalConstants.ViewShading.Lighter
-        
-        emailLink.backgroundColor = GlobalConstants.ViewShading.Darker
-        weatherSource.backgroundColor = GlobalConstants.ViewShading.Darker
-        iconSource.backgroundColor = GlobalConstants.ViewShading.Darker
-        photoSource.backgroundColor = GlobalConstants.ViewShading.Darker
 
         // Make round corners for the outerviews
         emailView.layer.cornerRadius = 10.0
@@ -56,8 +52,8 @@ class AboutViewController: UIViewController {
         creditsView.clipsToBounds = true
         
         // Make corners for the textviews, for effect
-        emailLink.layer.cornerRadius = 10.0
-        emailLink.clipsToBounds = true
+        emailButton.layer.cornerRadius = 10.0
+        emailButton.clipsToBounds = true
         
         weatherSource.layer.cornerRadius = 10.0
         weatherSource.clipsToBounds = true
@@ -68,10 +64,10 @@ class AboutViewController: UIViewController {
         photoSource.layer.cornerRadius = 10.0
         photoSource.clipsToBounds = true
         
-        let emailString = GlobalConstants.SupportEmailAddress
-        let emailAttributedString = NSMutableAttributedString(string: emailString)
-        emailAttributedString.addAttribute(NSLinkAttributeName, value: GlobalConstants.SupportEmailAddress, range: NSRange(location: 0, length: emailString.characters.count))
-        emailLink.attributedText = emailAttributedString
+        emailButton.backgroundColor = GlobalConstants.ViewShading.Darker
+        weatherSource.backgroundColor = GlobalConstants.ViewShading.Darker
+        iconSource.backgroundColor = GlobalConstants.ViewShading.Darker
+        photoSource.backgroundColor = GlobalConstants.ViewShading.Darker
 
         // Make the label to the credits clickable
         let urlString = "Weather API powered By Dark Sky API"
@@ -88,13 +84,46 @@ class AboutViewController: UIViewController {
         let photosAttributedString = NSMutableAttributedString(string: photosUrlString)
         photosAttributedString.addAttribute(NSLinkAttributeName, value: GlobalConstants.WeatherPhotosURL, range: NSRange(location: 0, length: photosUrlString.characters.count))
         photoSource.attributedText = photosAttributedString
-
-        let deviceHardware = UIDeviceHardware.platformString()
-       
-        let majorVersion = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
-        let minorVersion = ProcessInfo.processInfo.operatingSystemVersion.minorVersion
         
-        let iosVersion = String(majorVersion) + "." + String(minorVersion)
+    }
+    
+    @IBAction func emailButtonPressed(_ sender: AnyObject) {
+        sendEmail()
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([GlobalConstants.SupportEmailAddress])
+            
+            //  Send some device information in the email
+            
+            let deviceHardware = UIDeviceHardware.platformString()
+            
+            let majorVersion = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
+            let minorVersion = ProcessInfo.processInfo.operatingSystemVersion.minorVersion
+            
+            let iosVersion = String(majorVersion) + "." + String(minorVersion)
+            
+            var messageBody = "<p>Device Type: " + deviceHardware + "</p>"
+            messageBody = messageBody + "<p>iOS Version: " + iosVersion + "</p>"
+            
+            mail.setMessageBody(messageBody, isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+            
+            let messageText = "Sorry, your device has not been set up to send emails."
+            let alertView = UIAlertView(title: "Email Error", message: messageText, delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
