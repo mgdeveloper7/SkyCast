@@ -266,53 +266,74 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-j4-BjQ">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dan-gC-PrT">
-                                <segments>
-                                    <segment title="Celsius"/>
-                                    <segment title="Fahrenheit"/>
-                                </segments>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zup-9r-Obp">
-                                <segments>
-                                    <segment title="On"/>
-                                    <segment title="Off"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day/Night colours  for Hour Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psg-pK-JnX">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-Nu-fNN">
-                                <frame key="frameInset" minX="6" minY="204" width="308" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky_background_PEXELS" translatesAutoresizingMaskIntoConstraints="NO" id="GWQ-6S-AB0"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-Nu-fNN">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-j4-BjQ">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dan-gC-PrT">
+                                        <segments>
+                                            <segment title="Celsius"/>
+                                            <segment title="Fahrenheit"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zup-9r-Obp">
+                                        <segments>
+                                            <segment title="On"/>
+                                            <segment title="Off"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day/Night colours  for Hour Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psg-pK-JnX">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="119" id="t2t-5G-z1r"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zup-9r-Obp" firstAttribute="leading" secondItem="Psg-pK-JnX" secondAttribute="trailing" constant="19" id="1CN-4a-XjD"/>
+                                    <constraint firstItem="Psg-pK-JnX" firstAttribute="top" secondItem="bcg-j4-BjQ" secondAttribute="bottom" constant="28" id="7nC-Xa-LJb"/>
+                                    <constraint firstItem="zup-9r-Obp" firstAttribute="top" secondItem="dan-gC-PrT" secondAttribute="bottom" constant="31" id="Efa-z5-28E"/>
+                                    <constraint firstItem="Psg-pK-JnX" firstAttribute="centerX" secondItem="bcg-j4-BjQ" secondAttribute="centerX" id="OFf-QN-g29"/>
+                                    <constraint firstAttribute="bottom" secondItem="Psg-pK-JnX" secondAttribute="bottom" constant="19" id="QoY-jJ-GHt"/>
+                                    <constraint firstItem="bcg-j4-BjQ" firstAttribute="top" secondItem="ijf-Nu-fNN" secondAttribute="top" constant="19" id="ZF2-PT-lno"/>
+                                    <constraint firstItem="Psg-pK-JnX" firstAttribute="centerY" secondItem="zup-9r-Obp" secondAttribute="centerY" id="cvl-E3-UT1"/>
+                                    <constraint firstItem="zup-9r-Obp" firstAttribute="top" secondItem="dan-gC-PrT" secondAttribute="bottom" constant="31" id="fdv-Wk-jk4"/>
+                                    <constraint firstAttribute="bottom" secondItem="zup-9r-Obp" secondAttribute="bottom" constant="22" id="fhd-5q-a0q"/>
+                                    <constraint firstAttribute="trailing" secondItem="dan-gC-PrT" secondAttribute="trailing" constant="4" id="jwQ-W9-wuF"/>
+                                    <constraint firstItem="dan-gC-PrT" firstAttribute="leading" secondItem="bcg-j4-BjQ" secondAttribute="trailing" constant="18" id="wc5-eg-gMw"/>
+                                    <constraint firstAttribute="trailing" secondItem="zup-9r-Obp" secondAttribute="trailing" constant="4" id="xSt-Zf-E3t"/>
+                                    <constraint firstItem="bcg-j4-BjQ" firstAttribute="leading" secondItem="ijf-Nu-fNN" secondAttribute="leading" constant="5" id="xWl-jH-gzc"/>
+                                    <constraint firstItem="dan-gC-PrT" firstAttribute="top" secondItem="ijf-Nu-fNN" secondAttribute="top" constant="19" id="yaS-Oi-Sv2"/>
+                                    <constraint firstItem="Psg-pK-JnX" firstAttribute="leading" secondItem="ijf-Nu-fNN" secondAttribute="leading" constant="5" id="zdr-lU-pMD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zup-9r-Obp" firstAttribute="trailing" secondItem="dan-gC-PrT" secondAttribute="trailing" id="1hw-rA-str"/>
-                            <constraint firstItem="bcg-j4-BjQ" firstAttribute="leading" secondItem="Psg-pK-JnX" secondAttribute="leading" id="4Kw-hz-rBJ"/>
-                            <constraint firstItem="zup-9r-Obp" firstAttribute="leading" secondItem="dan-gC-PrT" secondAttribute="leading" id="5ak-CS-0TG"/>
-                            <constraint firstItem="bcg-j4-BjQ" firstAttribute="top" secondItem="dan-gC-PrT" secondAttribute="top" id="9zF-Vy-goF"/>
-                            <constraint firstItem="zup-9r-Obp" firstAttribute="centerY" secondItem="Psg-pK-JnX" secondAttribute="centerY" id="Aa1-YR-xAE"/>
-                            <constraint firstItem="Psg-pK-JnX" firstAttribute="leading" secondItem="tnz-Qq-7Rf" secondAttribute="leading" constant="13" id="Ar2-GC-NER"/>
+                            <constraint firstItem="GWQ-6S-AB0" firstAttribute="top" secondItem="LDg-EN-c2s" secondAttribute="bottom" id="5xO-PB-QhB"/>
+                            <constraint firstItem="GWQ-6S-AB0" firstAttribute="leading" secondItem="tnz-Qq-7Rf" secondAttribute="leading" id="DTW-kT-oDG"/>
                             <constraint firstItem="LDg-EN-c2s" firstAttribute="leading" secondItem="tnz-Qq-7Rf" secondAttribute="leading" id="F8D-Rr-7jV"/>
-                            <constraint firstItem="dan-gC-PrT" firstAttribute="top" secondItem="LDg-EN-c2s" secondAttribute="bottom" constant="31" id="SQL-Va-iOy"/>
-                            <constraint firstItem="Gbj-5H-Hjc" firstAttribute="top" secondItem="Psg-pK-JnX" secondAttribute="bottom" constant="383" id="b0n-q9-wAq"/>
+                            <constraint firstItem="ijf-Nu-fNN" firstAttribute="leading" secondItem="tnz-Qq-7Rf" secondAttribute="leading" constant="8" id="Sjb-ix-0bB"/>
+                            <constraint firstItem="ijf-Nu-fNN" firstAttribute="top" secondItem="tnz-Qq-7Rf" secondAttribute="top" constant="113" id="ccQ-VV-SY7"/>
+                            <constraint firstItem="Gbj-5H-Hjc" firstAttribute="top" secondItem="ijf-Nu-fNN" secondAttribute="bottom" constant="327" id="ckE-TR-2cq"/>
+                            <constraint firstItem="ijf-Nu-fNN" firstAttribute="top" secondItem="LDg-EN-c2s" secondAttribute="bottom" constant="49" id="dTJ-Yr-Ls3"/>
+                            <constraint firstAttribute="trailing" secondItem="GWQ-6S-AB0" secondAttribute="trailing" id="dph-GT-3VN"/>
+                            <constraint firstAttribute="trailing" secondItem="ijf-Nu-fNN" secondAttribute="trailing" constant="8" id="eHb-OH-Icw"/>
                             <constraint firstItem="LDg-EN-c2s" firstAttribute="centerX" secondItem="tnz-Qq-7Rf" secondAttribute="centerX" id="iHv-hx-kGy"/>
-                            <constraint firstItem="bcg-j4-BjQ" firstAttribute="bottom" secondItem="dan-gC-PrT" secondAttribute="bottom" id="uIU-Lm-dfb"/>
                             <constraint firstItem="LDg-EN-c2s" firstAttribute="top" secondItem="UQk-kH-0Ix" secondAttribute="bottom" id="uYe-cT-9lb"/>
-                            <constraint firstAttribute="trailing" secondItem="dan-gC-PrT" secondAttribute="trailing" constant="12" id="z76-kK-iyh"/>
+                            <constraint firstItem="Gbj-5H-Hjc" firstAttribute="top" secondItem="GWQ-6S-AB0" secondAttribute="bottom" id="yQ4-ou-LLC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dayNightColourControl" destination="zup-9r-Obp" id="92a-Ot-nHg"/>
+                        <outlet property="settingsView" destination="ijf-Nu-fNN" id="Eyb-1I-MQM"/>
                         <outlet property="tempUnitsControl" destination="dan-gC-PrT" id="6xu-DX-7Sy"/>
                     </connections>
                 </viewController>

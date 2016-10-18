@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController {
 
     var delegate:SettingsViewControllerDelegate?
     
+    @IBOutlet weak var settingsView: UIView!
+    
     @IBOutlet weak var backButton : UIButton!
     @IBOutlet weak var okButton : UIButton!
     
@@ -29,12 +31,26 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         loadSettings()
+        setupScreen()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func setupScreen () {
+    
+        settingsView.backgroundColor = GlobalConstants.ViewShading.Lighter
+        
+        settingsView.alpha = 0.7
+
+        // Make round corners for the outerviews
+        settingsView.layer.cornerRadius = 10.0
+        settingsView.clipsToBounds = true
+    }
+    
     
     // MARK:  Load/Save details
     func loadSettings() {

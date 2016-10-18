@@ -140,7 +140,7 @@ class GlobalConstants: NSObject {
             case wind = "windy.jpg"
             case fog = "ID-10010583_Atmosphere Of Haze_dan.jpg"
             case cloudy = "ID-100202953_White And Gray Clouds_Stoonn.jpg"
-            case partlyCloudyDay = "ID-1006666_Green And Blue Landscape_dan.jpg"
+            case partlyCloudyDay = "partial_clouds_day-53594_PEXELS.jpeg"
             case partlyCloudyNight = "ID-100403699_Corona Full Moon In The Cloudy Day_voraorn.jpg"
             
             // Future

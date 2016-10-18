@@ -111,13 +111,7 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
     
     
     func initialScreenSetup () {
-               
-//        currentLocation = CLLocation(latitude: 51.5082509, longitude: 0.624327)
-//        compareLocation = CLLocation(latitude: 51.4543, longitude: 0.9781)
-//        
-//        var distancebetween = getDistanceBetween(currentLocation!, location2: compareLocation!, units: "M")
-//        print ("distancebetween = " + String(distancebetween) )
-        
+                      
         // Make the credit label clickable
         let urlString = "Powered By Dark Sky API"
         let attributedString = NSMutableAttributedString(string: urlString)
@@ -133,7 +127,6 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
         
         poweredByDarkSkyText.attributedText = attributedString
 
-        
         currentTempView.backgroundColor = GlobalConstants.ViewShading.Lighter
         weatherDetailView.backgroundColor = GlobalConstants.ViewShading.Darker
         sunriseStackView.backgroundColor = GlobalConstants.TableViewAlternateShadingDay.Darker
@@ -274,8 +267,9 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
             if todayArray.icon == "rain" {
                 // Find out how much rain we have
                 
-                let rainIntensity = getRainIntensity(rainIntensity: todayArray.precipIntensity!)
-                currentSummary.text = (minuteBreakdown?.summary)! + " (" + rainIntensity + ")"
+                //let rainIntensity = getRainIntensity(rainIntensity: todayArray.precipIntensity!)
+                //currentSummary.text = (minuteBreakdown?.summary)! + " (" + rainIntensity + ")"
+                currentSummary.text = (minuteBreakdown?.summary)!
             }
             else {
                 currentSummary.text = minuteBreakdown?.summary
@@ -283,19 +277,19 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
             
             // TODO:  Loop through 'minutely'.  See if we can find rain within the next hour
             
-            let minuteArray = dailyWeather?.minuteBreakdown.minuteStats
-            var minuteCount = 0
-            
-            minuteLoop: for minute in minuteArray! {
-                
-                // Get the WeatherStats from withing the minute breakdown
-                
-                minuteCount += 1
-                if minute.precipType == "rain" {
-                    break minuteLoop
-                }
-                
-            }
+//            let minuteArray = dailyWeather?.minuteBreakdown.minuteStats
+//            var minuteCount = 0
+//            
+//            minuteLoop: for minute in minuteArray! {
+//                
+//                // Get the WeatherStats from withing the minute breakdown
+//                
+//                minuteCount += 1
+//                if minute.precipType == "rain" {
+//                    break minuteLoop
+//                }
+//                
+//            }
 
            // if minuteCount < 60 {
            //     currentSummary.text = currentSummary.text! + ". Rain due in the next " + String(minuteCount) + " minutes"
@@ -355,23 +349,23 @@ class TodayTabVC: UIViewController, UITextViewDelegate {
         return retVal
     }
     
-    func getRainIntensity (rainIntensity : Float) -> String {
-        
-        // Decode how much rain we will have
-        
-        var retVal = ""
-        
-        switch rainIntensity {
-        case 0...0.0019: retVal = "No rain"
-        case 0.002...0.0169: retVal = "Very light rain"
-        case 0.017...0.099: retVal = "Light rain"
-        case 0.1...0.399: retVal = "Moderate rain"
-        case 0.4...100.00: retVal = "Heavy rain"
-        default: print("No rain")
-        }
-        
-        return retVal
-    }
+//    func getRainIntensity (rainIntensity : Float) -> String {
+//        
+//        // Decode how much rain we will have
+//        
+//        var retVal = ""
+//        
+//        switch rainIntensity {
+//        case 0...0.0019: retVal = "No rain"
+//        case 0.002...0.0169: retVal = "Very light rain"
+//        case 0.017...0.099: retVal = "Light rain"
+//        case 0.1...0.399: retVal = "Moderate rain"
+//        case 0.4...100.00: retVal = "Heavy rain"
+//        default: print("No rain")
+//        }
+//        
+//        return retVal
+//    }
     
     
 //    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
