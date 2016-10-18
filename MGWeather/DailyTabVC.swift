@@ -44,7 +44,7 @@ class DailyTabVC: UIViewController {
             let iconName = Utility.getWeatherImage(serviceIcon: (enumVal?.rawValue)!)
             
             if String(iconName).isEmpty != nil {
-  //              weatherImage.image = UIImage(named: iconName)!
+                weatherImage.image = UIImage(named: iconName)!
             }
             
             dailyWeatherTableView.reloadData()
