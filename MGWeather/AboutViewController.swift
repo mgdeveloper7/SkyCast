@@ -12,6 +12,7 @@ import MessageUI
 class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var aboutView: UIView!
     @IBOutlet weak var aboutTitle: UILabel!
     @IBOutlet weak var aboutVersion: UILabel!
     @IBOutlet weak var aboutAuthor: UILabel!
@@ -41,10 +42,19 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     func setupScreen () {
     
+        aboutView.backgroundColor = GlobalConstants.ViewShading.Lighter
         emailView.backgroundColor = GlobalConstants.ViewShading.Lighter
         creditsView.backgroundColor = GlobalConstants.ViewShading.Lighter
+        
+        aboutView.alpha = 0.6
+        emailView.alpha = 0.6
+        creditsView.alpha = 0.6
 
         // Make round corners for the outerviews
+        
+        aboutView.layer.cornerRadius = 10.0
+        aboutView.clipsToBounds = true
+        
         emailView.layer.cornerRadius = 10.0
         emailView.clipsToBounds = true
         

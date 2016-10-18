@@ -108,6 +108,7 @@ class GlobalConstants: NSObject {
     struct Images {
         enum ServiceIcon : String {
             
+            // These names are returned from the Dark Sky API
             case clearDay = "clear-day"
             case clearNight = "clear-night"
             case rain = "rain"
