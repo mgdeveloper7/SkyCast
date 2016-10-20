@@ -32,6 +32,7 @@
 		C74B946D1D4023B100BECDA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B946C1D4023B100BECDA3 /* AboutViewController.swift */; };
 		C74B946F1D40284700BECDA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B946E1D40284700BECDA3 /* SettingsViewController.swift */; };
 		C770BD9F1D351E11007AD275 /* WeatherAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD9E1D351E11007AD275 /* WeatherAlerts.swift */; };
+		C7A4D7291DB7603000754F20 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A4D7281DB7603000754F20 /* Reachability.swift */; };
 		C7BE8B5D1D73948F00491F58 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE8B5C1D73948F00491F58 /* HourlyWeatherCell.swift */; };
 		C7C437601D79651B00A6386D /* HourlyWeatherCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4375F1D79651B00A6386D /* HourlyWeatherCVCell.swift */; };
 		C7C437621D79850200A6386D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C437611D79850200A6386D /* Location.swift */; };
@@ -71,6 +72,7 @@
 		C74B946C1D4023B100BECDA3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C74B946E1D40284700BECDA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C770BD9E1D351E11007AD275 /* WeatherAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAlerts.swift; sourceTree = "<group>"; };
+		C7A4D7281DB7603000754F20 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C7BE8B5C1D73948F00491F58 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		C7C4375F1D79651B00A6386D /* HourlyWeatherCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCVCell.swift; sourceTree = "<group>"; };
 		C7C437611D79850200A6386D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				C73F897F1DAE355C009FCC30 /* UIDeviceHardware.swift */,
+				C7A4D7281DB7603000754F20 /* Reachability.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				C7C437621D79850200A6386D /* Location.swift in Sources */,
 				C7175ACF1D316CCC00788F09 /* DailyTabVC.swift in Sources */,
 				C7175AB61D31698700788F09 /* DailyBreakdown.swift in Sources */,
+				C7A4D7291DB7603000754F20 /* Reachability.swift in Sources */,
 				C7175AB91D31698700788F09 /* Weather.swift in Sources */,
 				C73F89801DAE355C009FCC30 /* UIDeviceHardware.swift in Sources */,
 				C7F712051D78746000B4404D /* HourWeatherCell.swift in Sources */,

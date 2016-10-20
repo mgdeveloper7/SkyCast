@@ -62,6 +62,14 @@ class ParentWeatherVC: UIViewController, CLLocationManagerDelegate, SettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Reachability.isConnectedToNetwork() == true
+        {
+            print("Internet Connection Available!")
+        }
+        else
+        {
+            print("Internet Connection not Available!")
+        }
         // Get the current location and the weather data based on location
         
         locationFound = getLocation()
